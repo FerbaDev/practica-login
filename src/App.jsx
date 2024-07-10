@@ -6,18 +6,17 @@ import Protected from './components/Protected'
 
 function App() {
   
-  const [isAuth, setIsAuth] = useState(false)
+  const [isAuth, setIsAuth] = useState(false);
 
   return (
     <>
       <Router>
         <Routes>
-          <Route path='/login' element={<Login setIsAuth={setIsAuth}/>} />
-          <Route path='/protected' element={isAuth ? <Protected /> : <Navigate to={"/login"} />}  />
+          <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
+          <Route path='/protected' element={isAuth ? <Protected /> : <Navigate to={"/login"} />} />
           <Route path='/' element={<Navigate to={"/login"} />} />
         </Routes>
       </Router>
-      
     </>
   )
 }
